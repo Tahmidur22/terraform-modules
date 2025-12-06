@@ -3,7 +3,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location                = var.location
   resource_group_name     = var.resource_group_name
   dns_prefix              = var.dns_prefix
-  private_cluster_enabled = true
+  private_cluster_enabled = false
   kubernetes_version      = var.kubernetes_version
 
   default_node_pool {
