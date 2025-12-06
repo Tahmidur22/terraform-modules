@@ -44,9 +44,3 @@ variable "vnet_subnet_id" {
   description = "The ID of the virtual network subnet to which the AKS cluster will be connected."
   type        = string
 }
-variable "enable_auto_scaling" {
-  description = "Enable or disable the cluster autoscaler for the system node pool."
-  type        = bool
-  default     = false
-
-}

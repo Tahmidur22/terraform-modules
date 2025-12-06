@@ -10,9 +10,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     name            = "system"
     node_count      = var.system_node_count
     vm_size         = var.system_vm_size
-    vnet_subnet_id  = var.vnet_subnet_id
-    min_count       = var.enable_auto_scaling ? var.system_min_nodes : null
-    max_count       = var.enable_auto_scaling ? var.system_max_nodes : null
+    vnet_subnet_id  = var.vnet_subnet_id    
     os_disk_size_gb = 128
   }
 
