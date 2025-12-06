@@ -11,7 +11,7 @@ variable "address_space" {
     description = "The address space that is used by the virtual network."
     type        = list(string)
 }
-variable "ask_subnet_cidr" {
+variable "aks_subnet_cidr" {
     description = "The CIDR block for the AKS private subnet."
     type        = string
 }

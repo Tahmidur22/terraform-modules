@@ -13,7 +13,7 @@ resource "azurerm_subnet" "aks_private_subnet" {
     name                = "${var.vnet_name}-aks-private-subnet"
     resource_group_name = var.resource_group_name
     virtual_network_name= azurerm_virtual_network.network.name
-    address_prefixes    = [var.ask_subnet_cidr]
+    address_prefixes    = [var.aks_subnet_cidr]
 }
 
 resource "azurerm_subnet" "public_subnet" {
