@@ -14,3 +14,7 @@ output "aks_nsg_id" {
   description = "The ID of the NSG attached to the AKS subnet"
   value       = azurerm_network_security_group.aks_private_subnet_nsg.id
 }
+output "public_nsg_id" {
+  description = "The ID of the NSG attached to the Public subnet"
+  value       = azurerm_network_security_group.public_subnet_nsg.id
+}
