@@ -19,6 +19,6 @@ output "aks_node_resource_group" {
 
 output "kube_config" {
   description = "The kubeconfig file content for the AKS cluster."
-  value       = azurerm_kubernetes_cluster.aks.kube_config_raw
+  value       = azurerm_kubernetes_cluster.aks.kube_config[0]
   sensitive   = true
 }
