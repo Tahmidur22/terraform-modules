@@ -16,11 +16,6 @@ variable "aks_subnet_cidr" {
   type        = string
 }
 
-variable "public_subnet_cidr" {
-  description = "The CIDR block for the public subnet."
-  type        = string
-}
-
 variable "vnet_name" {
   description = "The name of the virtual network."
   type        = string
