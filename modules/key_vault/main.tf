@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv" {
-  name                = "akstestkeyvault"
+  name                = var.kv_name
   location            = var.location
   resource_group_name = var.resource_group_name
   tenant_id           = data.azurerm_client_config.current.tenant_id
@@ -9,9 +9,9 @@ resource "azurerm_key_vault" "kv" {
   soft_delete_retention_days = 7
 }
 
-resource "azurerm_key_vault_secret" "datadog_api_key" {
-  name         = "DatadogApiKey"
-  value        = var.datadog_api_key
+resource "azurerm_key_vault_secret" "kv_secrets" {
+  for_each     = var.secrets
+  name         = each.key
+  value        = each.value
   key_vault_id = azurerm_key_vault.kv.id
-  
 }

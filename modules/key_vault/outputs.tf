@@ -3,7 +3,7 @@ output "key_vault_id" {
     value       = azurerm_key_vault.kv.id
 }
 
-output "datadog_secret_name" {
-    description = "The name of the Datadog API key secret"
-    value       = azurerm_key_vault_secret.datadog_api_key.name
-}
+# output "datadog_secret_name" {
+#     description = "The name of the Datadog API key secret"
+#     value       = azurerm_key_vault_secret.datadog_api_key.name
+# }
