@@ -6,12 +6,6 @@ resource "azurerm_key_vault" "kv" {
   resource_group_name = var.resource_group_name
   tenant_id           = data.azurerm_client_config.current.tenant_id
   sku_name            = "standard"
-  soft_delete_retention_days = 7
-}
 
-resource "azurerm_key_vault_secret" "kv_secrets" {
-  for_each     = var.secrets
-  name         = each.key
-  value        = each.value
-  key_vault_id = azurerm_key_vault.kv.id
+  rbac_authorization_enabled  = true
 }
