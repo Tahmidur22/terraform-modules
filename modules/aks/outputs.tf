@@ -9,7 +9,7 @@ output "cluster_id" {
 }
 output "kubelet_identity" {
   description = "The object ID of the kubelet identity for the AKS cluster."
-  value       = azurerm_kubernetes_cluster.aks.kubelet_identity.0.object_id
+  value       = tostring(azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id)
 }
 
 output "aks_node_resource_group" {
